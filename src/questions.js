@@ -34,7 +34,7 @@ const questions = [
     {
         type: 'input',
         name: 'office',
-        message: "Please enter the manager's office number: ",
+        message: `Please enter the manager's office number: `,
         when: ({ role }) => ( role === 'Manager' ? true : false )
     },
     {

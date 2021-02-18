@@ -51,52 +51,32 @@ const generateHTML = employeeList => {
 
     <main class="container">    
         <div class="manager">
-            <h2>Jared</h2>
+            <h2>${manager.name}</h2>
             <h3>Manager</h3>
             <div>
-                <p>ID: 1</p>
-                <p>Email: <a>jared@fakemail.com</a></p>
-                <p>Office Number: 1</p>
+                <p>ID: ${manager.id}</p>
+                <p>Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                <p>Office Number: ${manager.office}</p>
             </div>
         </div>
 
         <div class="engineer">
-            <h2>Alec</h2>
+            <h2>${engineer.name}</h2>
             <h3>Engineer</h3>
             <div>
-                <p>ID: 2</p>
-                <p>Email: <a>alec@fakemail.com</a></p>
-                <p>GitHub: <a>ibealec</a></p>
-            </div>
-        </div>
-
-        <div class="engineer">
-            <h2>Grace</h2>
-            <h3>Engineer</h3>
-            <div>
-                <p>ID: 3</p>
-                <p>Email: <a>grace@fakemail.com</a></p>
-                <p>GitHub: <a>gchoi2u</a></p>
-            </div>
-        </div>
-
-        <div class="engineer">
-            <h2>Tammer</h2>
-            <h3>Engineer</h3>
-            <div>
-                <p>ID: 4</p>
-                <p>Email: <a>tammer@fakemail.com</a></p>
-                <p>GitHub: <a>tammerg</a></p>
+                <p>ID: ${engineer.id}</p>
+                <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+                <p>GitHub: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></p>
             </div>
         </div>
 
         <div class="intern">
-            <h2>John</h2>
+            <h2>${intern.name}</h2>
             <h3>Intern</h3>
             <div>
-                <p>ID: 5</p>
-                <p>Email: <a>john@fakemail.com</a></p>
-                <p>School: ZUniversity</p>
+                <p>ID: ${intern.id}</p>
+                <p>Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+                <p>School: ${intern.school}</p>
             </div>
         </div>  
     </main>

@@ -1,0 +1,58 @@
+:root {
+    --primary: rgba(51, 235, 235, 1);
+    --secondary: rgba(94, 224, 54, 1);
+    --tertiary: rgba(245, 139, 39, 1);
+    --light: rgba(245, 240, 240, 1);
+    --dark: rgba(31, 30, 30, 1);  
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass Mono', monospace;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+header {
+    background-color: rgba(51, 235, 235, 0.3);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--light);
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.employee {
+    margin: 20px;
+    padding: 20px;
+    flex: 1;
+}
+
+.manager {
+    background-color: rgba(51, 235, 235, 0.1);
+    border: 3px solid var(--primary);
+}
+
+.engineer {
+    background-color: rgba(94, 224, 54, 0.1);
+    border: 3px solid var(--secondary);
+}
+
+.intern {
+    background-color: rgba(245, 139, 39, 0.1);
+    border: 3px solid var(--tertiary);
+}

@@ -1,6 +1,10 @@
 const inquirer = require('inquirer');
 const Employee = require('./lib/employee');
 const questions = require('./src/questions');
+const { writeFile, copyFile, generateHTML } = require('./src/generate-page.js');
+const fs = require('fs');
+
+// const employeeList = [];
 
 function promptUser() {
     let employee = new Employee;
@@ -26,6 +30,20 @@ Add Employee Information
         });
 };
 
-promptUser().then(employeeList => {
-    console.table(employeeList)
-});
+promptUser()
+    .then(data => {
+        return generateHTML(data);
+    })
+    .then(pageHTML => {
+        return writeFile(pageHTML);
+    })
+    .then(writeFileResponse => {
+        console.log(writeFileResponse.message);
+        return copyFile();
+    })
+    .then(copyFileResponse => {
+        console.log(copyFileResponse.message);
+    })
+    .catch(err => {
+        console.log(err);
+    });

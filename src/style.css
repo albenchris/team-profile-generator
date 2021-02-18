@@ -14,6 +14,8 @@
 }
 
 body {
+    position: relative;
+    min-height: 100vh;
     background-color: var(--dark);
     color: var(--light);
 }
@@ -37,12 +39,17 @@ header {
 
 footer {
     border-top: 3px solid rgba(245, 240, 240, 0.5);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 /* Header & Footer styles end */
 
+/* Main styles start */
 .container {
     width: 100%;
     margin: 0 auto;
+    padding-bottom: 70px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -54,6 +61,9 @@ footer {
     margin: 20px;
     flex: 1;
     border: 3px solid;
+    max-width: 250px;
+    min-width: 290px;
+    max-width: 290px;
 }
 
 .manager h2,
@@ -122,3 +132,4 @@ footer {
 .intern h3 {
     border-color: var(--tertiary);
 }
+/* Main styles end */

@@ -13,21 +13,21 @@ An application used to quickly write a team's website. Meant to help teammates a
 
 ## Installation
 * Download ZIP file and extract files into your project.
-* Open terminal and navigate to team-profile-generator-main. ('cd team-profile-generator-main') 
+* Open terminal and navigate to team-profile-generator-main. ('cd team-profile-generator-main')
+* Type 'npm init' in command line allowing default values for prompts.
 * Type 'npm install inquirer' in command line.
 * [Requires Node.js](https://nodejs.org/en/)
 
 See video:
-[installation](https://drive.google.com/file/d/1nPfvVAWPsyPralvrc8PXCgfqf2WMFRgX/view)
+[installation](https://drive.google.com/file/d/17KHVgxxAqjwd3EWArx6xOcdcI4dSROTa/view)
 
 ## Usage
 * Navigate to the root of team-profile-generator in command line. (ex. 'cd team-profile-generator-main')
-* Type 'node index.js' into command line.
-* Answer prompts.
-* Move index.html and style.css to the root of your repository.
+* Type 'node index.js' into command line and answer prompts.
+* Once done, a new index.html and stylesheet will be generated into your repository.
 
 See video:
-[usage]()
+[usage](https://drive.google.com/file/d/18iVSZJVuulMbKtCIiR69Uw5jLDtidQaW/view)
 
 ## Tests
 Tests have been written to ensure each employee object is created without error

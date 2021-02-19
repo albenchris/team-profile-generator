@@ -37,8 +37,6 @@ const copyFile = () => {
 // Page template start
 // filters through the team[] array and generates a card for each employee in order of role
 const generateHTML = team => {
-    console.log(team)
-
     return `<!DOCTYPE html>
 <html lang="en">
 <head>

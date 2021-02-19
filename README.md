@@ -32,10 +32,11 @@ See video:
 ## Tests
 Tests have been written to ensure each employee object is created without error
 * Install [jest](https://jestjs.io/docs/en/getting-started)
+* In package.json, change "test" value to "jest".
 * Type 'npm test' to run
 
 See video:
-[tests]()
+[tests](https://drive.google.com/file/d/1t36AdpYv7_JA6i7wxADC_ksWg7YUJvTT/view)
 
 ## License
 MIT: https://opensource.org/licenses/MIT

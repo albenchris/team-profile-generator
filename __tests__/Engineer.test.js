@@ -28,4 +28,4 @@ test("Checks if role is overridden to 'Engineer'", () => {
 
     expect(engineer.getRole()).toEqual({'role': engineer.role});
     expect(engineer.role).toBe('Engineer');
-})
+});

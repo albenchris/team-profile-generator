@@ -1,5 +1,6 @@
 const fs = require('fs');
 
+// writeFile promise
 const writeFile = pageHTML => {
     return new Promise((resolve, reject) => {
         fs.writeFile('./dist/index.html', pageHTML, err => {
@@ -10,12 +11,13 @@ const writeFile = pageHTML => {
 
             resolve({
                 ok: true,
-                message: 'File created!'
+                message: 'Your team website has been created!'
             });
         });
     });
 };
 
+// copyFile promise
 const copyFile = () => {
     return new Promise((resolve, reject) => {
         fs.copyFile('./src/style.css', './dist/style.css', err => {
@@ -32,6 +34,8 @@ const copyFile = () => {
     });
 };
 
+// Page template start
+// filters through the team[] array and generates a card for each employee in order of role
 const generateHTML = team => {
     console.log(team)
 
@@ -42,7 +46,6 @@ const generateHTML = team => {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Team</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -52,6 +55,7 @@ const generateHTML = team => {
     </header>
 
     <main class="container">
+        <!-- MANAGERS START -->
         ${team
             .filter(({ role }) => role === 'Manager')
             .map(({ name, id, email, office }) => {
@@ -68,7 +72,9 @@ const generateHTML = team => {
         `;
             })
         .join('')}
-    
+        <!-- MANAGERS END -->
+
+        <!-- ENGINEERS START -->
         ${team
             .filter(({ role }) => role === 'Engineer')
             .map(({ name, id, email, github }) => {
@@ -85,7 +91,9 @@ const generateHTML = team => {
         `;
             })
         .join('')}
+        <!-- ENGINEERS END -->
 
+        <!-- INTERNS START -->
         ${team
             .filter(({ role }) => role === 'Intern')
             .map(({ name, id, email, school }) => {
@@ -102,6 +110,7 @@ const generateHTML = team => {
         `;
             })
         .join('')}
+        <!-- MANAGERS END -->
     </main>
 
     <footer>
@@ -112,5 +121,6 @@ const generateHTML = team => {
 </html>
 `;
 };
+// Page template end
 
 module.exports = { writeFile, copyFile, generateHTML };

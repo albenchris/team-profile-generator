@@ -4,16 +4,11 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const questions = require('./src/questions');
 const { writeFile, copyFile, generateHTML } = require('./src/generate-page.js');
-const fs = require('fs');
 
+// team[] array that passes to generateHTML function
 let team = [];
-// {
-//     managers: [],
-//     engineers: [],
-//     interns: []
-// };
 
-const promptUser = employees => {    
+const promptUser = () => {    
     console.log(`
 ========================
 Add Employee Information
@@ -59,6 +54,7 @@ Add Employee Information
         });
 };
 
+// Initializes application
 promptUser()
     .then(data => {
         return generateHTML(data);

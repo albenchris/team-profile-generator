@@ -49,36 +49,57 @@ const generateHTML = employeeList => {
         <h1>My Team</h1>
     </header>
 
-    <main class="container">    
+    <main class="container">
+        ${employeeList
+            .filter(({ manager }) => manager)
+            .map(({ name, id, email, office }) => {
+                return `
         <div class="manager">
-            <h2>${manager.name}</h2>
+            <h2>${name}</h2>
             <h3>Manager</h3>
             <div>
-                <p>ID: ${manager.id}</p>
-                <p>Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                <p>Office Number: ${manager.office}</p>
+                <p>ID: ${id}</p>
+                <p>Email: <a href="mailto:${email}">${email}</a></p>
+                <p>Office Number: ${office}</p>
             </div>
         </div>
-
+        `;
+            })
+        .join('')}
+    
+        ${employeeList
+            .filter(({ engineer }) => engineer)
+            .map(({ name, id, email, github }) => {
+                return `
         <div class="engineer">
-            <h2>${engineer.name}</h2>
+            <h2>${name}</h2>
             <h3>Engineer</h3>
             <div>
-                <p>ID: ${engineer.id}</p>
-                <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p>GitHub: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></p>
+                <p>ID: ${id}</p>
+                <p>Email: <a href="mailto:${email}">${email}</a></p>
+                <p>GitHub: <a href="https://github.com/${github}" target="_blank">${github}</a></p>
             </div>
         </div>
+        `;
+            })
+        .join('')}
 
+        ${employeeList
+            .filter(({ intern }) => intern)
+            .map(({ name, id, email, school }) => {
+                return `
         <div class="intern">
-            <h2>${intern.name}</h2>
+            <h2>${name}</h2>
             <h3>Intern</h3>
             <div>
-                <p>ID: ${intern.id}</p>
-                <p>Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
-                <p>School: ${intern.school}</p>
+                <p>ID: ${id}</p>
+                <p>Email: <a href="mailto:${email}">${email}</a></p>
+                <p>School: ${school}</p>
             </div>
         </div>  
+        `;
+            })
+        .join('')}
     </main>
 
     <footer>
@@ -89,7 +110,5 @@ const generateHTML = employeeList => {
 </html>
 `;
 };
-
-
 
 module.exports = { writeFile, copyFile, generateHTML };

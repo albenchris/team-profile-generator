@@ -13,7 +13,7 @@ const promptUser = () => {
 ========================
 Add Employee Information
 ========================
-`)
+`);
 
     return inquirer
         .prompt(questions)
@@ -43,12 +43,12 @@ Add Employee Information
                     intern.email = employees.email;
                     intern.school = employees.school;
                 }
-            }
+            };
 
-            team.push(employees)
+            team.push(employees);
 
             if (employees.continue) {
-                return promptUser(employees);
+                return promptUser();
             } 
             return team; 
         });
